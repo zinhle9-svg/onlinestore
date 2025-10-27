@@ -1,6 +1,6 @@
 import React from 'react'
 
-function LoginDetails() {
+function Register() {
   return (
     <div>
       <form>
@@ -22,4 +22,4 @@ function LoginDetails() {
   )
 };
 
-export default LoginDetails;
+export default Register;
