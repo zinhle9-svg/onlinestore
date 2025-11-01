@@ -1,8 +1,6 @@
 import React from 'react';
 //find images and import
 
-
-function Products (){
      const Product= [
 {name: 'food',
  image: 'pic',
@@ -13,6 +11,8 @@ function Products (){
  image: 'pic',
  price: 'R1000'
 }]
+function Products (){
+
 return (
  <div>
   {
