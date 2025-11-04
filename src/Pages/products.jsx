@@ -1,7 +1,11 @@
 import React from 'react';
-//find images and import
+import { useNavigate } from 'react-router-dom';
 
-     const Product= [
+//find images and import
+function view(name) {
+    console.log(name)
+}
+   export  const Product= [
 {name: 'food',
  image: 'pic',
  price: 'R2000'
@@ -11,8 +15,9 @@ import React from 'react';
  image: 'pic',
  price: 'R1000'
 }]
-function Products (){
 
+function Products (){
+const navigate = useNavigate()
 return (
  <div>
   {
@@ -23,7 +28,7 @@ return (
       <h4>{item.price}</h4>
       <img src={item.image}></img>
       <div>
-      <button>View</button>
+      <button onClick={()=> navigate(`/productView/${item.name}`)}>View</button>
       <button>Add to cart</button>
       </div>
       </div>
@@ -35,5 +40,5 @@ return (
 )
 }
 
-export default Products;
+export default Products; 
 

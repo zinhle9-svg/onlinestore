@@ -1,19 +1,25 @@
 import LoginDetails from './Pages/LoginDetails';
 import Products from './Pages/Products';
-import React from 'react'
-import { configureStore } from '@reduxjs/toolkit'
+import React from 'react';
+import ProductView from './Pages/ProductView';
+import { Route, Routes } from 'react-router-dom';
 
-export const store = configureStore({
-  reducer: {},
-})
+// import { configureStore } from '@reduxjs/toolkit'
+
+// export const store = configureStore({
+//   reducer: {},
+// })
 
 
 function App() {
   return (
-    <div>
-      <LoginDetails />
-      <Products />
-    </div>
+    <Routes>
+      <Route path='*' element={<h1>page not found</h1>} />
+      <Route path='/login' element={ <LoginDetails /> } />
+     <Route path='/products' element={<Products />} />
+      <Route path='/ProductView/:name' element={ <ProductView />} />
+    
+    </Routes>
   )
 }
 
