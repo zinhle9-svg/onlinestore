@@ -14,12 +14,12 @@ import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <Routes>
+      <Route path='/' element={<Products />} />
       <Route path='*' element={<h1>page not found</h1>} />
       <Route path='/login' element={ <LoginDetails /> } />
-     <Route path='/products' element={<Products />} />
       <Route path='/ProductView/:name' element={ <ProductView />} />
     
-    </Routes>
+    </Routes>   
   )
 }
 

@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
+import { Product } from './Products';
+
+
 
 function Productview() {
- const params = useParams()
-console.log(params)
+const params = useParams()
+const selectedProduct = Product.find((item) => item.name === params.name) 
+
+console.log()
+
   return (
     <div>
-      <h1>This is a Product of {params.name}</h1>
+    {/* <Productview item={selectedItem} /> */}
     </div>
+  
   )
 }
 
