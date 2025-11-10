@@ -8,8 +8,8 @@ function view(name) {
    
 //     const handleViewClick = (item )=> {
 //   selectedItem(item);
-// }
 }
+
    export  const Product= [
 {name: 'food',
  image: 'pic',
@@ -31,13 +31,13 @@ return (
   {
    Product.map((item) => {
     return(
-     <div>
+     <div>git
      <h3>{item.name}</h3>
       <h4>R {item.price}</h4>
       <img src={item.image}></img>
       <div>
       <button onClick={()=> navigate(`/productView/${item.name}`)}>View</button>
-      <button>Add to cart</button>
+      <button className=''>Add to cart</button>
       </div>
       </div>
 
