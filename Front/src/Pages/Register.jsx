@@ -4,18 +4,22 @@ function Register() {
   return (
     <div>
       <form>
-       <h1>Login</h1>
+       <h1>Register</h1>
        <div>
-      <label>Email address</label>
-      <input type="email" required/> 
+      <label>Name</label>
+      <input type="name"  required/> 
       </div>
       <div>
-      <label>Password</label>
-      <input type="password" required minLength={8}/> 
+      <label>Surname</label>
+      <input type="text" required minLength={8}/> 
       </div>
-      <button> Login</button>
-       <button>Signup</button>
-      <button> Forgot password</button>
+      <div>
+      <label>Date of birth</label>
+      <input type="date" required/> 
+      </div>
+      <button type="password" required minLength={10}>Create password</button>
+       <button>Submit</button>
+      
      
       </form>
     </div>

@@ -6,13 +6,15 @@ import { Product } from './Products';
 
 function Productview() {
 const params = useParams()
-const selectedProduct = Product.find((item) => item.name === params.name) 
+const selectedProduct = Product.find((item) => item.id == params.id) 
 
-console.log()
+console.log(selectedProduct)
 
   return (
     <div>
-    {/* <Productview item={selectedItem} /> */}
+    <h1>{selectedProduct.name}</h1>
+    <p1>{selectedProduct.description}</p1>
+    
     </div>
   
   )

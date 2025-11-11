@@ -3,6 +3,8 @@ import Products from './Pages/Products';
 import React from 'react';
 import ProductView from './Pages/ProductView';
 import { Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home';
+import Register from './Pages/Register';
 
 // import { configureStore } from '@reduxjs/toolkit'
 
@@ -14,10 +16,13 @@ import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<Products />} />
+      <Route path='/' element={<Home />} />
       <Route path='*' element={<h1>page not found</h1>} />
       <Route path='/login' element={ <LoginDetails /> } />
-      <Route path='/ProductView/:name' element={ <ProductView />} />
+      <Route path='/ProductView/:id' element={ <ProductView />} />
+      <Route path='/register' element={ <Register />} />
+      <Route path='/products' element={ <Products />} />
+
     
     </Routes>   
   )
