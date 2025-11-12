@@ -11,14 +11,18 @@ function Register() {
       </div>
       <div>
       <label>Surname</label>
-      <input type="text" required minLength={8}/> 
+      <input type="text" required minLength={3}/> 
       </div>
       <div>
-      <label>Date of birth</label>
-      <input type="date" required/> 
+      <label>email</label>
+      <input type="email" required/> 
       </div>
-      <button type="password" required minLength={10}>Create password</button>
-       <button>Submit</button>
+      <label>password</label>
+      <input type="password" required minLength={8} />
+      <div>
+         <button>Submit</button>
+      </div>
+      
       
      
       </form>
