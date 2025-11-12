@@ -15,7 +15,7 @@ function Register() {
       </div>
       <div>
       <label>email</label>
-      <input type="email" required/> 
+      <input type="email" required /> 
       </div>
       <label>password</label>
       <input type="password" required minLength={8} />

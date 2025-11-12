@@ -1,7 +1,8 @@
 import React from 'react'
-import LoginDetails from './LoginDetails'
 
-function Home() {
+function Home()
+
+{
   return (
   
      <div class="topnav">
@@ -10,6 +11,7 @@ function Home() {
   <a href="register">New here?</a>
   <a href="products">Products</a>
 </div>
+
   
   )
 }
