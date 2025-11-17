@@ -41,7 +41,10 @@ return (
       <img src={item.image}></img>
       <div>
       <button onClick={()=> navigate(`/productView/${item.id}`)}>View</button>
-      <button className=''>Add to cart</button>
+      {/* <button onClick={() => navigate(`/ShoppingCart/`)}>Add to cart</button> */}
+       <button onClick={() => navigate("/ShoppingCart")}>
+        Add to cart
+      </button>
       </div>
       </div>
 

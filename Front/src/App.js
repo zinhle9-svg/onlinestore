@@ -5,6 +5,7 @@ import ProductView from './Pages/ProductView';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import Register from './Pages/Register';
+import ShoppingCart from './Pages/ShoppingCart';
 
 // import { configureStore } from '@reduxjs/toolkit'
 
@@ -22,9 +23,9 @@ function App() {
       <Route path='/ProductView/:id' element={ <ProductView />} />
       <Route path='/register' element={ <Register />} />
       <Route path='/products' element={ <Products />} />
-
-    
+      <Route path='/ShoppingCart' element={ <ShoppingCart /> } />
     </Routes>   
+  
   )
 }
 
