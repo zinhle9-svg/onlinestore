@@ -1,5 +1,12 @@
 import React from 'react'
+import { useState } from 'react'
 
+const [cart, setCart] = useState()
+const handleAddtocart () => {
+  if !existingItem ( item + 1)
+} else {
+   
+}
 function ShoppingCart() {
   return (
    <div>
