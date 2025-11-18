@@ -2,34 +2,40 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-//find images and import
-function view(name) {
-    console.log(name)
-   
-//     const handleViewClick = (item )=> {
-//   selectedItem(item);
-}
 
    export  const Product= [
 { id: 1,
    name: 'food',
  image: 'pic',
  price: 2000,
- description: 'different food served'
+ description: 'different food served',
+ quantity: 1
 },
 {
    id: 2,
  name: 'cars',
  image: 'pic',
  price: 1000,
-  description: 'Porsche isnt part of this'
+  description: 'Porsche isnt part of this',
+   quantity: 1
 }]
+
 // Product.findIndex( () => {
   
 // }) 
-function Products (){
-   const [selectedItem, setSeletedItem] = useState();
+function Products ({updateCart}){
+const [selectedItem, setSeletedItem] = useState();
 const navigate = useNavigate()
+
+const handleAddtocart = () => {
+  const existingItem = []
+  if (!existingItem) {
+// add new item to the cart
+} else {
+   // add quantity
+}
+}
+
 return (
  <div>
   {

@@ -6,15 +6,17 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import Register from './Pages/Register';
 import ShoppingCart from './Pages/ShoppingCart';
+import { Product } from './Pages/Products';
+import { useState } from 'react';
+
 
 // import { configureStore } from '@reduxjs/toolkit'
 
 // export const store = configureStore({
 //   reducer: {},
 // })
-
-
 function App() {
+  const [cart, setCart] = useState([])
   return (
     <Routes>
       <Route path='/' element={<Home />} />
@@ -22,7 +24,7 @@ function App() {
       <Route path='/login' element={ <LoginDetails /> } />
       <Route path='/ProductView/:id' element={ <ProductView />} />
       <Route path='/register' element={ <Register />} />
-      <Route path='/products' element={ <Products />} />
+      <Route path='/products' element={ <Products updateCart={setCart} />}  />
       <Route path='/ShoppingCart' element={ <ShoppingCart /> } />
     </Routes>   
   
