@@ -24,15 +24,19 @@ import { useState } from 'react';
   
 // }) 
 function Products ({updateCart}){
-const [selectedItem, setSeletedItem] = useState();
+const [selectedItem, setSelectedItem] = useState();
 const navigate = useNavigate()
 
 const handleAddtocart = () => {
-  const existingItem = []
+  const existingItem = true;
   if (!existingItem) {
 // add new item to the cart
+updateCart => {
+      const existing = Product.find(item => item.id === selectedItem.id)}
+
 } else {
    // add quantity
+   Product.push({ ...selectedItem, quantity: 1} )
 }
 }
 
