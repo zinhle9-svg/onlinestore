@@ -24,19 +24,26 @@ import { useState } from 'react';
   
 // }) 
 function Products ({updateCart}){
-const [selectedItem, setSelectedItem] = useState();
+
 const navigate = useNavigate()
 
-const handleAddtocart = () => {
-  const existingItem = true;
+const handleAddtocart = (selectedItem) => {
+  const existingItem = cart.find(item => item.id === selectedItem)}
   if (!existingItem) {
 // add new item to the cart
-updateCart => {
-      const existing = Product.find(item => item.id === selectedItem.id)}
+updateCart(prevCart => [
+  ...prevCart,
+  { ...selectedItem, quantity: 1 }
+]);
 
 } else {
-   // add quantity
-   Product.push({ ...selectedItem, quantity: 1} )
+  updateCart(prevCart =>
+  prevCart.map(item =>
+    item.id === selectedItem.id
+      ? { ...item, quantity: item.quantity + 1 }
+      : item
+  )
+);
 }
 }
 
@@ -52,18 +59,20 @@ return (
       <div>
       <button onClick={()=> navigate(`/productView/${item.id}`)}>View</button>
       {/* <button onClick={() => navigate(`/ShoppingCart/`)}>Add to cart</button> */}
-       <button onClick={() => navigate("/ShoppingCart")}>
+       <button onClick={() => handleAddtocart()}>
         Add to cart
       </button>
       </div>
       </div>
-
+     
     )
    })        
   }
- </div>
+  </div>
 )
-}
+
+
+
 
 export default Products; 
 
