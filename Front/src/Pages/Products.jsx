@@ -23,28 +23,45 @@ import { useState } from 'react';
 // Product.findIndex( () => {
   
 // }) 
-function Products ({updateCart}){
+function Products ({updateCart, cart}){
 
 const navigate = useNavigate()
 
 const handleAddtocart = (selectedItem) => {
-  const existingItem = cart.find(item => item.id === selectedItem)}
+  
+  const existingItem = cart.length > 0 ?  cart.find(item => item.id === selectedItem.id) : undefined
   if (!existingItem) {
 // add new item to the cart
-updateCart(prevCart => [
+updateCart((prevCart) => [
   ...prevCart,
   { ...selectedItem, quantity: 1 }
 ]);
 
 } else {
-  updateCart(prevCart =>
-  prevCart.map(item =>
-    item.id === selectedItem.id
-      ? { ...item, quantity: item.quantity + 1 }
-      : item
-  )
-);
+//   const cartCopy = [...cart]
+//  const productIndex = cartCopy.findIndex((item) => item.id === selectedItem.id)
+//  console.log(productIndex)
+//  console.log(cartCopy)
+// const number = cartCopy[productIndex].quantity + 1
+// console.log(number)
+updateCart(prevCart =>
+    prevCart.map(item =>
+      item.id === selectedItem.id
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
+    )
+  );
+//  updateCart(cartCopy[productIndex].quantity + 1)
+  // updateCart(prevCart => {
+  // prevCart.map((item) => {
+    
+  //   item.id === selectedItem.id
+  //     ? { ...item, quantity: item.quantity + 1 }
+  //     : item 
+  // })}
+// );
 }
+console.log(cart)
 }
 
 return (
@@ -59,7 +76,7 @@ return (
       <div>
       <button onClick={()=> navigate(`/productView/${item.id}`)}>View</button>
       {/* <button onClick={() => navigate(`/ShoppingCart/`)}>Add to cart</button> */}
-       <button onClick={() => handleAddtocart()}>
+       <button onClick={() => handleAddtocart(item)}>
         Add to cart
       </button>
       </div>
@@ -71,7 +88,7 @@ return (
   </div>
 )
 
-
+}
 
 
 export default Products; 
